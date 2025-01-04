@@ -40,3 +40,10 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+Creds:-
+git config --global user.email "bluedge70@gmail.com"
+git config --global user.name "BlueEdge70"
+
+git config --global user.email "panchalraj512@gmail.com"
+git config --global user.name "Rajpanchalll"
