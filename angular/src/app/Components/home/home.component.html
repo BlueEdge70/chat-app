@@ -1,0 +1,49 @@
+<div class="h-screen">
+      <div class="header flex justify-between align-middle w-full px-10 py-5">
+            <div class="logo">
+                  <p class="text-4xl">Quick chat</p>
+            </div>
+            <div class="flex gap-4">
+                  <div class="h-auto w-auto text-lg ">
+                        <button class="bg-blue-900 text-white px-4 py-2 rounded-md" [routerLink]="['/sign-up']">Sign
+                              Up</button>
+                  </div>
+                  <div class="h-auto w-auto text-lg ">
+                        <button class="bg-blue-900 text-white px-4 py-2 rounded-md" [routerLink]="['/sign-in']">Sign
+                              In</button>
+                  </div>
+            </div>
+      </div>
+
+      <div class="content h-4/6 w-full flex flex-col align-middle items-center bg-blue-900 justify-center">
+            <p class="text-5xl block text-white">
+                  Let's Chat with your loved ones!
+            </p>
+      </div>
+
+      <footer class="bg-blue-900 text-white py-6">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+                  <div class="mb-4 md:mb-0">
+                        <h2 class="text-lg font-bold">ChatApp</h2>
+                        <p class="text-sm text-gray-300">Connect. Chat. Collaborate.</p>
+                  </div>
+
+                  <ul class="flex space-x-4 text-sm">
+                        <li>
+                              <a href="#about" class="hover:underline">About</a>
+                        </li>
+                        <li>
+                              <a href="#privacy" class="hover:underline">Privacy Policy</a>
+                        </li>
+                        <li>
+                              <a href="#contact" class="hover:underline">Contact</a>
+                        </li>
+                  </ul>
+
+                  <div class="text-sm text-gray-300 mt-4 md:mt-0">
+                        &copy; 2025 ChatApp. All rights reserved.
+                  </div>
+            </div>
+      </footer>
+
+</div>

@@ -5,37 +5,36 @@ import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../Shared/Services/auth.service';
 
 @Component({
-  selector: 'app-sign-in',
+  selector: 'app-sign-up',
   standalone: true,
   imports: [CommonModule, RouterLink, ReactiveFormsModule, FormsModule],
-  templateUrl: './sign-in.component.html',
-  styleUrl: './sign-in.component.scss'
+  templateUrl: './sign-up.component.html',
+  styleUrl: './sign-up.component.scss'
 })
-export class SignInComponent implements OnInit {
-
+export class SignUpComponent implements OnInit {
   authService: AuthService = inject(AuthService);
   private fb = inject(FormBuilder);
   router: Router = inject(Router);
-  SignInForm!: FormGroup;
+  SignUpForm!: FormGroup;
 
   ngOnInit(): void {
-    this.buildSignInForm();
+    this.buildSignUpForm();
   }
 
-  buildSignInForm(): void {
-    this.SignInForm = this.fb.group({
+  buildSignUpForm(): void {
+    this.SignUpForm = this.fb.group({
       email: ['', Validators.email],
       password: ['', Validators.required]
     })
   }
 
-  onSignInFormSubmit(): void {
-    if (!this.SignInForm.valid) {
+  onSignUpformSubmit(): void {
+    if (!this.SignUpForm.valid) {
       return
     }
     try {
-      const { email, password } = this.SignInForm.value;
-      this.authService.login(email, password);
+      const { email, password } = this.SignUpForm.value;
+      this.authService.register(email, password);
       this.router.navigate(['/chat-list'])
     }
     catch (error: any) {

@@ -41,9 +41,13 @@ testem.log
 .DS_Store
 Thumbs.db
 
-Creds:-
+Git Creds:-
 git config --global user.email "bluedge70@gmail.com"
 git config --global user.name "BlueEdge70"
 
 git config --global user.email "panchalraj512@gmail.com"
 git config --global user.name "Rajpanchalll"
+
+creds:
+username - bluedge70@gmail.com
+password - bg@123
