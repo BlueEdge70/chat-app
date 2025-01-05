@@ -1,0 +1,16 @@
+.flex-1.overflow-y-auto {
+      scroll-behavior: smooth;
+}
+
+.flex-1.overflow-y-auto::-webkit-scrollbar {
+      width: 6px;
+}
+
+.flex-1.overflow-y-auto::-webkit-scrollbar-thumb {
+      background: #1d4ed8;
+      border-radius: 9999px;
+}
+
+.flex-1.overflow-y-auto::-webkit-scrollbar-track {
+      background: #f3f4f6;
+}

@@ -1,13 +1,13 @@
 <div id="signup-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
       <div class="bg-white rounded-lg p-6 w-full max-w-md">
             <div class="flex justify-between pr-3">
-                  <h2 class="text-xl font-bold mb-4">Sign In</h2>
+                  <h2 class="text-xl font-bold mb-4">Sign Up</h2>
                   <div class="cursor-pointer font-bold" [routerLink]="['/']" routerLinkActive="router-link-active">
                         X
                   </div>
             </div>
             <div>
-                  <form [formGroup]="SignInForm" (ngSubmit)="onSignInFormSubmit()">
+                  <form [formGroup]="SignUpForm" (ngSubmit)="onSignUpformSubmit()">
                         <div class="mb-4">
                               <label for="email" class="block text-sm font-medium text-black">Email</label>
                               <input type="email" formControlName="email" id="email"
@@ -20,9 +20,9 @@
                                     class="w-full border-2 border-blue-900 rounded-md p-2" name="password" required />
                         </div>
 
-                        <button [disabled]="this.SignInForm.invalid" type="submit"
+                        <button [disabled]="this.SignUpForm.invalid" type="submit"
                               class="w-full bg-blue-900 text-white px-4 py-2 rounded-md">
-                              Sign In
+                              Sign Up
                         </button>
                   </form>
 
