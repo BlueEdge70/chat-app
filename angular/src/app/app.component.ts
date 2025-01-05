@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { WebSocketService } from './Shared/Services/web-socket.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +12,31 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'angular';
+
+  private websocketService: WebSocketService = inject(WebSocketService);
+
+  ngOnInit(): void {
+    this.initializeSocketConnection();
+  }
+
+  ngOnDestroy() {
+    this.disconnectSocket();
+  }
+
+  // Initializes socket connection
+  initializeSocketConnection() {
+    this.websocketService.connectSocket('message');
+  }
+
+  // Receives response from socket connection 
+  receiveSocketResponse() {
+    this.websocketService.receiveStatus().subscribe((receivedMessage: string) => {
+      console.log(receivedMessage);
+    });
+  }
+
+  // Disconnects socket connection
+  disconnectSocket(): any {
+    return this.websocketService.disconnetSocket();
+  }
 }
